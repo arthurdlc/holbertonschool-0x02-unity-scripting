@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float speed = 50f;
-    [SerializeField] Rigidbody rb;
-
+    public float speed = 50f;
+    public Rigidbody rb;
+        
     void FixedUpdate()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
