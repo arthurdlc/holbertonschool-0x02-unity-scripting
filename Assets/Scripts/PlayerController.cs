@@ -4,9 +4,8 @@ public class PlayerController : MonoBehaviour
 {
     public float speed = 50f;
     public Rigidbody rb;
-
-     private int score = 0;
-
+    public int health = 5;
+    private int score = 0;
     void OnTriggerEnter(Collider other)
     {
         // Check if the object is tagged as "Pickup"
@@ -15,6 +14,16 @@ public class PlayerController : MonoBehaviour
             score++;
             Debug.Log("Score: " + score);
             other.gameObject.SetActive(false);
+        }
+        if (other.CompareTag("Trap"))
+        {
+            health--;
+            Debug.Log("Health: " + health);
+            // if (health <= 0)
+            // {
+            //     Debug.Log("Game Over");
+            //     Application.Quit();
+            // }
         }
     }
         
